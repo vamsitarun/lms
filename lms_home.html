@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LMS</title>
+
+
+<style type="text/css">
+	body{
+		
+		padding: 0;
+		margin: 0;
+		background: rgba(0,0,0,0.5);
+	}
+	#img-logo{
+
+	}
+	#title{
+		
+		
+		height:130px;
+		border:1px solid  rgba(0,0,0,0.5);
+		margin-top: 0px;
+		background-color: rgba(0,0,0,0.5);
+	}
+	#content{
+		color: #fff;
+		text-align: center;
+		background-color: rgba(0,0,0,0.5);
+		position: absolute;
+		height: 235px;
+		top: 40px;
+		float: left;
+		left: 10px;
+		width: 700px;
+		padding:25px;
+		 box-shadow:0 2px 4px 0 rgba(0,0,0,.3); 
+		margin: 10% auto;
+		opacity: 1;
+	}
+	#login-box{
+		float:right;
+		border: 0px solid red;
+		width: 400px;
+		min-height: 280px;
+		margin-top: 40px;
+		margin-right: 150px;
+		background-color: #ffffff;
+		box-shadow:0 2px 4px 0 rgba(0,0,0,.3);
+                border-radius: 2px;
+	}
+	#first{
+		
+		color: #000;
+		font-family: arial;
+		
+	}
+	#second{
+		display: none;
+	}
+        #third{
+            display:none;
+        }
+	.text-bar{
+		margin-left: 10px;
+		font-size: 20px;
+	}
+	 input[name=sid]
+            {
+                width: 290px;
+                height:40px;
+                border-radius: 3px;
+                border:1px solid #000000;
+                font-size: 15px;
+                color:black;
+                background-color: #ffffff;
+               
+               
+            }
+            input[name=enter],[name=login]
+            {
+                width: 385px;
+                height:40px;
+                border-radius: 3px;
+                border:1px solid #36caf0;
+                font-size: 18px;
+                color:#ffffff;
+               
+              
+               background: linear-gradient(to bottom, #22abe9 5%, #36caf0 100%);
+            }
+            .if{
+            	width: 385px;
+                height:40px;
+                border-radius: 3px;
+                border:1px solid #333;
+                font-size: 15px;
+                color:black;
+                background-color: #ffffff;
+             	margin-top: 10px;
+                margin-left: 10px;
+            }
+            input[name=password]{
+            	width: 385px;
+                height:40px;
+                border-radius: 3px;
+                border:1px solid #333;
+                font-size: 15px;
+                color:black;
+                margin-top: 10px;
+                background-color: #ffffff;
+                 margin-left: 10px;
+            }
+            #s-link{
+            	font-size: 15px;
+            	text-align: center;
+            	
+            }
+            #s-link a{
+            	text-decoration: none;
+            }
+             #s-link a:hover{
+            	text-decoration: underline;
+            	color:green;
+            }
+            #Admin{
+            	font-size: 15px;
+            	text-align: center;
+            	text-decoration: none;
+            	margin-top: 0px;
+
+            }
+            #Admin a{
+            	text-decoration: underline;
+            	color: #899eee;
+            	font-family:arial;
+            	font-size: 16px;
+            }
+            #Admin a:hover{
+            	color: #220ccc;
+            	text-decoration:none;
+            }
+             #a-link{
+            	font-size: 15px;
+            	text-align: center;
+            	
+            }
+            #a-link a{
+            	text-decoration: none;
+            }
+             #a-link a:hover{
+            	text-decoration: underline;
+            	color:red;
+            }
+            #stu,#Admin1{
+            	font-size: 15px;
+            	text-align: center;
+            	text-decoration: none;
+
+            }
+            #stu a,#Admin1 a{
+            	text-decoration: none;
+            	color: #987722;
+            	font-family:arial;
+            }
+            #stu a:hover{
+            	text-decoration: none;
+            	color: #220ccc;
+            }
+             #notem
+           {
+               display: none;
+           }
+           #img{
+           		margin-top:380px;
+           		position:relative;
+           }
+            #footer{
+            	height: 70px;
+            	background:#333;
+            	bottom: 0;
+            	left: 0;
+            	right: 0;
+            	position:relative;
+            	color: #fff;
+            	padding-left: 10px;
+            	text-align: center;
+            }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+		$("#Admin").click(function(){
+			$("#first").slideUp("slow",function(){
+				$("#second").slideDown("slow");
+			});
+		});
+		$("#stu").click(function(){
+			$("#second").slideUp("slow",function(){
+				$("#first").slideDown("slow");
+			});
+		});
+                $("#Admin11").click(function(){
+                   $("#second").slideUp("slow",function(){
+                       $("#third").slideDown("slow");
+                       $("#img").css("margin-top","470px");
+                   }); 
+                });
+                $("#Admin1").click(function(){
+                   $("#third").slideUp("slow",function(){
+				$("#second").slideDown("slow");
+                                 $("#img").css("margin-top","380px");
+			}); 
+                });
+	});
+
+
+	var slideIndex = 0;
+carousel();
+
+function slide() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1;} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(slide, 2000); // Change image every 2 seconds
+}
+	
+	function showdisp()
+           {  
+               
+             //  var op=document.getElementId("coptn");
+                //document.getElementId("mainid").innerHTML=op.value;
+                
+                 var c=document.getElementById("sidn");
+                c.setAttribute("placeholder","Book category ex:c or book number=1424");
+               document.getElementById("notem").style.display="block";
+           }
+</script>
+</head>
+<body onload="slide()">
+	<div id="img-logo">
+		<div id="title" style="text-align: center;color:"> <h1 style="color:rgb(245, 9, 9);">GOKARAJU RANGARAJU INSTITUTE OF ENGINEERING AND TECHNOLOGY</h1>
+		<h2 style="color:#03f903;">LIBRARY MANAGEMENT SYSTEM</h2>
+		</div>
+               
+	</div>
+	<div id="content">
+		<h1 style="color:#00f7a9;">WELCOME TO OFFICIAL GRIET LIBRARY</h1>
+		<h3 style="color:#d7f53c;">
+		THERE ARE NUMBER OF BOOKS AVAILABLE IN GRIET LIBRARY</h3>
+		<h4 style="color:#0bf7ee; text-align: justify;font-family: garamond;padding: 1px 2px;line-height: 1.5; ">IN THIS SITE SEARCH BOOKS,KNOW YOUR STATUS,
+		AND KNOW THE STATUS OF BOOK AND ALSO KNOW THE HOW MANY BOOKS ARE AVAILABLE IN OUR LIBRARY. </h4>
+
+	</div>
+	<div id="login-box">
+	<!--student login-->
+	<div id="first" >
+	<form action="userservice" method="get">
+	<h2 style="text-align: center;height: 10px;">Student login</h2><hr>
+	<div id="login1">
+	<span class="text-bar">Enter college Id or search book</span><br>
+
+        <select name="c-optn" id="coptn" style="height:40px; border: 1px solid #000;border-radius: 3px;margin-left: 10px;margin-top: 10px;" onchange="showdisp(1)">
+                           <option value="cid">College ID</option>
+                           <option value="book">Book</option>
+                       </select>
+                        <input type="text" name="sid" placeholder="Enter id number or search book category" autocomplete="on" maxlength="10" id="sidn" required>
+                      	  <p id="notem" style="height:10px;margin-top:0px;font-size: 15px;margin-left:10px;color: #ff3300;"><u>Note:</u>please enter book category or book number</p>
+                      	  <input type="submit" name="enter" value="SUBMIT" style="margin-left: 10px;margin-top:5px;">
+                      	   <p id="s-link"><a href="createstudent.html">Students register here</a> </p>
+                       	   <p id="Admin"><a href="#" id="adminlog">Admin login here</a> </p>
+
+		</div>
+	</form>
+	</div>
+	<!--Admin login-->
+	<div id="second">
+		<form action="adminvalidate" method="post">
+				<h2 style="text-align: center;height: 10px;">Admin login</h2><hr>
+			<div id="login3">
+                            <input type="text" name="uname" placeholder="enter username" class="if" required>
+				<input type="password" name="password" placeholder="enter password" required>
+				<input type="submit" name="login" value="SUBMIT" style="margin-left: 10px;margin-top: 5px;">
+                                <p id="a-link"><a href="#">forget password?</a><a href="#" id="Admin11">&nbsp;|&nbsp;Admin create account</a></p>
+				<p id="stu"><a href="#">student login here</a></p>
+	</div>
+		</form>
+	</div>
+        <div id="third">
+            <form action="adminvalidate" method="post">
+				<h2 style="text-align: center;height: 10px;">Admin Register here</h2><hr>
+			<div id="login4">
+                            <input type="text" name="fname" placeholder="Enter fullname" class="if" required>
+                               
+				<input type="text" name="uname" placeholder="Enter username i.e college Id" class="if"  required>
+				<input type="password" name="password" placeholder="Enter password must be 6 characters" class="if" required>
+                                <input type="text" name="repass" placeholder="Repeat password" class="if" required>
+                                <input type="text" name="design" placeholder="Enter disignation" class="if" required>
+				<input type="submit" name="login" value="SUBMIT" style="margin-left: 10px;margin-top: 5px;">
+				
+                                <p id="Admin1"><a href="#" >Admin login here</a> </p>
+	</div>
+		</form>
+            
+        </div> 
+        
+        </div>
+	<div id="img" >
+		<img src="lib-back1.jpg" alt="griet" width="1347" height="500" class="mySlides" > 
+		<img src="lib-back2.jpg" alt="griet" width="1347" height="500" class="mySlides" > 
+		<img src="lib-back3.jpg" alt="griet" width="1347" height="500" class="mySlides" > 
+		<img src="lib-back.jpg" alt="griet" width="1347" height="500" class="mySlides" > 
+	</div>
+	<div id="footer">
+	<h4 >All rights reserved by Griet&copy;2017</h4>
+	</div>
+	
+
+</body>
+</html>
